@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropa do Double - Trabalhe Conosco</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .rotate {
+            animation: rotate 4s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header class="bg-black py-4 px-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-3">
+                    <i class="fas fa-dice text-white text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold">
+                    <span class="gradient-text">TROPA DO DOUBLE</span>
+                </h1>
+            </div>
+            <div>
+                <a href="#form-section" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-300 hidden md:inline-block">
+                    QUERO PARTICIPAR
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-70 z-10"></div>
+        <div class="absolute inset-0 z-0">
+            <video autoplay muted loop class="w-full h-full object-cover">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-roulette-wheel-spinning-17639-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="container mx-auto px-6 relative z-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="text-red-600">TRABALHE CONOSCO</span>
+                <span class="block text-white mt-2">R$2.000/MÊS - 100% ONLINE</span>
+            </h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Junte-se ao time mais lucrativo do Double e transforme seu tempo em dinheiro!</p>
+            <button id="cta-btn" class="btn-pulse bg-red-600 hover:bg-red-700 text-white text-xl px-8 py-4 rounded-full font-bold transition duration-300 transform hover:scale-105">
+                QUERO PARTICIPAR <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center z-20 animate-bounce">
+            <a href="#info-section" class="text-white text-4xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="info-section" class="py-20 bg-gray-900 section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="gradient-text">INFORMAÇÕES DA VAGA</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Salary Card -->
+                <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-red-600 transform hover:scale-105 transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-money-bill-wave text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">💰 Salário fixo</h3>
+                    </div>
+                    <p class="text-gray-300">R$ 2.000/mês</p>
+                </div>
+                
+                <!-- Location Card -->
+                <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-red-600 transform hover:scale-105 transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-laptop-house text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">📍 Trabalho</h3>
+                    </div>
+                    <p class="text-gray-300">100% online</p>
+                </div>
+                
+                <!-- Shifts Card -->
+                <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-red-600 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">🕒 TURNOS DISPONÍVEIS (Escolha um)</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <h4 class="font-bold text-red-400">Manhã</h4>
+                            <p class="text-gray-300">09:00 às 13:00</p>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <h4 class="font-bold text-red-400">Tarde</h4>
+                            <p class="text-gray-300">13:00 às 18:00</p>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <h4 class="font-bold text-red-400">Noite</h4>
+                            <p class="text-gray-300">18:00 às 23:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Requirements Card -->
+                <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-red-600 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-clipboard-check text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">✅ REQUISITOS</h3>
+                    </div>
+                    <ul class="space-y-3 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                            <span>Ter mais de 18 anos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                            <span>Vontade de aprender (não precisa saber apostar)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                            <span>Possuir 2 celulares ou 1 notebook</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                            <span>Ser responsável e comprometido</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                            <span>Ter tempo disponível fixo para o turno escolhido</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-red-500 mt-1 mr-2"></i>
+                            <span>Acesso estável à internet</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Double Section -->
+    <section class="py-20 bg-black section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="gradient-text">🎯 O QUE É O JOGO DOUBLE?</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-900 p-8 rounded-xl mb-8">
+                    <p class="text-lg mb-6">O Double é um jogo de apostas rápidas e emocionantes onde você aposta em uma das cores — vermelho, preto ou branco — e tenta prever onde a roleta vai parar. O jogo é simples, direto e oferece grandes chances de lucro com um sistema de multiplicação.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-red-900 bg-opacity-30 p-4 rounded-lg border border-red-800">
+                            <h3 class="font-bold text-red-400">Vermelho</h3>
+                            <p class="text-gray-300">paga 2x o valor apostado</p>
+                        </div>
+                        <div class="bg-black p-4 rounded-lg border border-gray-800">
+                            <h3 class="font-bold text-gray-400">Preto</h3>
+                            <p class="text-gray-300">paga 2x o valor apostado</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg border border-gray-300">
+                            <h3 class="font-bold text-gray-800">Branco</h3>
+                            <p class="text-gray-700">paga até 14x (ou mais), sendo a cor mais rara, mas muito lucrativa!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-rocket text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">🚀 Como Funciona?</h3>
+                        </div>
+                        <p class="text-gray-300">Aqui, a estratégia é simples: apostar na cor certa e deixar a sorte jogar a seu favor! E o melhor de tudo: não é preciso experiência ou habilidade! Você vai receber um grupo exclusivo, onde todas as entradas serão enviadas prontinhas para você — tudo o que você precisa fazer é copiar e colar.</p>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-8 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">🧑‍🏫 Sem Precisar de Estratégia</h3>
+                        </div>
+                        <p class="text-gray-300">Nada de se preocupar com números, cálculos ou aprender estratégias complicadas. Tudo já vem pronto para você, com as melhores entradas enviadas diretamente no grupo. O seu trabalho é simples: seguir as orientações e fazer as apostas.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-xl mb-6">Junte-se ao nosso time! Se você está buscando uma forma simples e eficiente de começar a apostar no Double, sem complicação, essa é a oportunidade ideal para você. Estamos aqui para te ajudar a alcançar os seus objetivos, com um time pronto para te orientar em cada passo.</p>
+                    
+                    <button id="cta-btn-2" class="btn-pulse bg-red-600 hover:bg-red-700 text-white text-xl px-8 py-4 rounded-full font-bold transition duration-300 transform hover:scale-105">
+                        QUERO PARTICIPAR <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form-section" class="py-20 bg-gray-900 section">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="gradient-text">INSCREVA-SE AGORA</span>
+            </h2>
+            
+            <div id="form-container" class="hidden bg-gray-800 p-8 rounded-xl shadow-xl fade-in">
+                <form id="recruitment-form" class="space-y-6">
+                    <div>
+                        <label for="fullname" class="block text-lg font-medium mb-2">Nome completo</label>
+                        <input type="text" id="fullname" name="fullname" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-red-500 focus:outline-none transition duration-300">
+                    </div>
+                    
+                    <div>
+                        <label for="age" class="block text-lg font-medium mb-2">Idade</label>
+                        <input type="number" id="age" name="age" min="18" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-red-500 focus:outline-none transition duration-300">
+                    </div>
+                    
+                    <div>
+                        <label for="location" class="block text-lg font-medium mb-2">Cidade e Estado</label>
+                        <input type="text" id="location" name="location" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-red-500 focus:outline-none transition duration-300">
+                    </div>
+                    
+                    <div>
+                        <label for="devices" class="block text-lg font-medium mb-2">Você tem 2 celulares ou um notebook?</label>
+                        <textarea id="devices" name="devices" rows="2" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-red-500 focus:outline-none transition duration-300"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-lg font-medium mb-2">Qual turno você tem disponibilidade?</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <input type="radio" id="morning" name="shift" value="Manhã (09:00 às 13:00)" class="hidden peer" required>
+                                <label for="morning" class="flex items-center justify-center p-3 rounded-lg bg-gray-700 border border-gray-600 peer-checked:border-red-500 peer-checked:bg-red-900 peer-checked:bg-opacity-30 cursor-pointer transition duration-300">
+                                    <span>Manhã</span>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="afternoon" name="shift" value="Tarde (13:00 às 18:00)" class="hidden peer">
+                                <label for="afternoon" class="flex items-center justify-center p-3 rounded-lg bg-gray-700 border border-gray-600 peer-checked:border-red-500 peer-checked:bg-red-900 peer-checked:bg-opacity-30 cursor-pointer transition duration-300">
+                                    <span>Tarde</span>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="night" name="shift" value="Noite (18:00 às 23:00)" class="hidden peer">
+                                <label for="night" class="flex items-center justify-center p-3 rounded-lg bg-gray-700 border border-gray-600 peer-checked:border-red-500 peer-checked:bg-red-900 peer-checked:bg-opacity-30 cursor-pointer transition duration-300">
+                                    <span>Noite</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-lg font-medium mb-2">Sua conexão de internet é estável?</label>
+                        <div class="flex space-x-4">
+                            <div>
+                                <input type="radio" id="internet-yes" name="internet" value="Sim" required class="hidden peer">
+                                <label for="internet-yes" class="flex items-center p-3 rounded-lg bg-gray-700 border border-gray-600 peer-checked:border-red-500 peer-checked:bg-red-900 peer-checked:bg-opacity-30 cursor-pointer transition duration-300">
+                                    <span>Sim</span>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="internet-no" name="internet" value="Não" class="hidden peer">
+                                <label for="internet-no" class="flex items-center p-3 rounded-lg bg-gray-700 border border-gray-600 peer-checked:border-red-500 peer-checked:bg-red-900 peer-checked:bg-opacity-30 cursor-pointer transition duration-300">
+                                    <span>Não</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="experience" class="block text-lg font-medium mb-2">Já trabalhou com algo parecido antes? Se sim, descreva.</label>
+                        <textarea id="experience" name="experience" rows="3" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-red-500 focus:outline-none transition duration-300"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-lg font-medium mb-2">Está disposto(a) a aprender como funciona o jogo e seguir estratégias?</label>
+                        <div class="flex space-x-4">
+                            <div>
+                                <input type="radio" id="willing-yes" name="willing" value="Sim" required class="hidden peer">
+                                <label for="willing-yes" class="flex items-center p-3 rounded-lg bg-gray-700 border border-gray-600 peer-checked:border-red-500 peer-checked:bg-red-900 peer-checked:bg-opacity-30 cursor-pointer transition duration-300">
+                                    <span>Sim</span>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="willing-no" name="willing" value="Não" class="hidden peer">
+                                <label for="willing-no" class="flex items-center p-3 rounded-lg bg-gray-700 border border-gray-600 peer-checked:border-red-500 peer-checked:bg-red-900 peer-checked:bg-opacity-30 cursor-pointer transition duration-300">
+                                    <span>Não</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="motivation" class="block text-lg font-medium mb-2">Por que você gostaria de fazer parte da equipe?</label>
+                        <textarea id="motivation" name="motivation" rows="3" required class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-red-500 focus:outline-none transition duration-300"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="occupation" class="block text-lg font-medium mb-2">Tem alguma outra ocupação atualmente?</label>
+                        <textarea id="occupation" name="occupation" rows="2" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-red-500 focus:outline-none transition duration-300"></textarea>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" class="w-full gradient-bg text-white text-xl px-6 py-4 rounded-lg font-bold transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                            ENVIAR INSCRIÇÃO <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="form-cta" class="text-center">
+                <div class="mb-8">
+                    <div class="w-24 h-24 rounded-full gradient-bg flex items-center justify-center mx-auto mb-6 rotate">
+                        <i class="fas fa-dice text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Pronto para começar?</h3>
+                    <p class="text-gray-400 mb-6">Preencha o formulário e dê o primeiro passo para transformar seu tempo em dinheiro!</p>
+                </div>
+                <button id="show-form-btn" class="btn-pulse bg-red-600 hover:bg-red-700 text-white text-xl px-8 py-4 rounded-full font-bold transition duration-300 transform hover:scale-105">
+                    QUERO PARTICIPAR <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-3">
+                        <i class="fas fa-dice text-white text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">
+                        <span class="gradient-text">TROPA DO DOUBLE</span>
+                    </h2>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition duration-300">
+                        <i class="fab fa-whatsapp text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition duration-300">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition duration-300">
+                        <i class="fab fa-telegram text-white"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>© 2023 Tropa do Double. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show form when button is clicked
+        document.getElementById('show-form-btn').addEventListener('click', function() {
+            document.getElementById('form-cta').classList.add('hidden');
+            document.getElementById('form-container').classList.remove('hidden');
+            document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Same for other CTA buttons
+        document.getElementById('cta-btn').addEventListener('click', function() {
+            document.getElementById('form-cta').classList.add('hidden');
+            document.getElementById('form-container').classList.remove('hidden');
+            document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        document.getElementById('cta-btn-2').addEventListener('click', function() {
+            document.getElementById('form-cta').classList.add('hidden');
+            document.getElementById('form-container').classList.remove('hidden');
+            document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Form submission
+        document.getElementById('recruitment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get all form values
+            const formData = new FormData(this);
+            const formProps = Object.fromEntries(formData);
+            
+            // Format message for WhatsApp
+            let whatsappMessage = `*INSCRIÇÃO PARA TROPA DO DOUBLE*%0A%0A`;
+            whatsappMessage += `*Nome completo:* ${formProps.fullname}%0A`;
+            whatsappMessage += `*Idade:* ${formProps.age}%0A`;
+            whatsappMessage += `*Cidade/Estado:* ${formProps.location}%0A`;
+            whatsappMessage += `*Dispositivos:* ${formProps.devices}%0A`;
+            whatsappMessage += `*Turno disponível:* ${formProps.shift}%0A`;
+            whatsappMessage += `*Internet estável:* ${formProps.internet}%0A`;
+            whatsappMessage += `*Experiência anterior:* ${formProps.experience || 'Nenhuma'}%0A`;
+            whatsappMessage += `*Disposição para aprender:* ${formProps.willing}%0A`;
+            whatsappMessage += `*Motivação:* ${formProps.motivation}%0A`;
+            whatsappMessage += `*Outras ocupações:* ${formProps.occupation || 'Nenhuma'}%0A%0A`;
+            whatsappMessage += `_Enviado via site Tropa do Double_`;
+            
+            // Redirect to WhatsApp
+            window.location.href = `https://wa.me/5582981117664?text=${whatsappMessage}`;
+        });
+        
+        // Scroll animations
+        function checkVisibility() {
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initial check
+        checkVisibility();
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkVisibility);
+    </script>
+</body>
+</html>
